@@ -5,7 +5,9 @@
 
     --active: #9E0E40;
     --notactive: #E7C3D0;
-    --white: #FFFFFF
+    --white: #FFFFFF;
+
+    --percentagewidth: calc(20vw + 20vh); 
 }
 
 *,
@@ -26,25 +28,76 @@ body {
     background-color: var(--bgcolor);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-#percentagesection {
-    height: 35vw;
-    width: 35vw;
+.sections {
+    padding: 5px;
     background-color: var(--white);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     border-radius: 8px;
     box-shadow: 20px 20px 40px rgba(60, 60, 150, 0.25);
+}
+
+.extrabold {
+    font-weight: bolder;
+}
+.extralight {
+    font-weight: lighter;
+}
+
+header {
+    width: 40vw;
+    position: absolute;
+    transform: translate(-50%, -5%);
+    top: 5%;
+    left: 50%;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#daysection {
+    width: 50vw;
+    position: absolute;
+    transform: translate(-50%, -20%);
+    top: 20%;
+    left: 50%;
+    font-size: larger;
+    text-align: center;
+}
+
+#h1 {
+    font-size: xx-large;
+}
+
+#weeksection {
+    width: 50vw;
+    position: absolute;
+    transform: translate(-50%, -33%);
+    top: 33%;
+    left: 50%;
+    font-size: large;
+    text-align: center;
+}
+
+#percentagesection {
+    height: var(--percentagewidth);
+    width: var(--percentagewidth);
+    position: absolute;
+    transform: translate(-50%, 10%);
+    bottom: 10%;
+    left: 50%;
+
     display: grid;
     place-items: center;
 }
 
 #progress {
     position: relative;
-    height: calc( .625 * 35vw );
-    width:  calc( .625 * 35vw );
+    height: calc( .9 * var(--percentagewidth) );
+    width:  calc( .9 * var(--percentagewidth) );
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -64,4 +117,15 @@ body {
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 50px;
     color: #231c3d;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 2px;
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-size: small;
 }
