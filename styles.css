@@ -147,4 +147,18 @@ footer {
     text-align: center;
     margin: auto;
     font-size: small;
+    margin-bottom: 8px;
+}
+
+#datesection {
+    position: fixed;
+    bottom: 0px;
+    margin-bottom: 8px;
+    width: 90vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bolder;
+    color: var(--bgcolorstart);
 }

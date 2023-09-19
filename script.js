@@ -4,6 +4,9 @@ const INFO = {
     eventname: "En Lituanie"
 }
 document.getElementById("dtitle").innerHTML = INFO.eventname.toUpperCase();
+document.getElementById("startdate").innerHTML = INFO.startdate;
+document.getElementById("enddate").innerHTML = INFO.enddate;
+
 
 let progressDiv = document.getElementById("progress");
 let progressValueDiv = document.getElementById("progressvalue");
@@ -28,6 +31,8 @@ const weeksSinceStart = Math.floor(daysSinceStart / 7);
 const weeksTotal = Math.floor(daysTotal / 7);
 
 const progressValue = Math.floor(100 * daysSinceStart / daysTotal);
+
+// Updating html
 document.getElementById("percentagesection").style.filter = `hue-rotate(${progressValue * 1.8}deg)`
 
 document.getElementById("ddaysleft").innerHTML = daysUntilEnd;
