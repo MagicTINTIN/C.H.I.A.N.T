@@ -1,0 +1,67 @@
+:root {
+    --bgcolor: #80CAE3;
+    --color1: #ff0000;
+    --color2: #00ff00;
+
+    --active: #9E0E40;
+    --notactive: #E7C3D0;
+    --white: #FFFFFF
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: var(--bgcolor);
+}
+
+
+#percentagesection {
+    height: 35vw;
+    width: 35vw;
+    background-color: var(--white);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    box-shadow: 20px 20px 40px rgba(60, 60, 150, 0.25);
+    display: grid;
+    place-items: center;
+}
+
+#progress {
+    position: relative;
+    height: calc( .625 * 35vw );
+    width:  calc( .625 * 35vw );
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+#progress:before {
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+#progressvalue {
+    position: relative;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 50px;
+    color: #231c3d;
+}
