@@ -26,6 +26,7 @@
 
 html,
 body {
+    overflow: hidden;
     width: 100%;
     height: 100%;
     padding: 0;
@@ -161,4 +162,34 @@ footer {
     justify-content: space-between;
     font-weight: bolder;
     color: var(--bgcolorstart);
+}
+
+@media only screen and (max-width: 1080px) {
+    header {
+        width: 90vw;
+        font-size: x-large;
+    }
+
+    #daysection {
+        width: 85vw;
+    }
+
+    #h1 {
+        font-size: x-large;
+    }
+
+    #weeksection {
+        width: 90vw;
+
+    }
+
+    #datesection {
+        font-size: small;
+    }
+}
+
+@media only screen and (max-height: 600px) and (min-width: 600px) {
+    #percentagesection {
+        display: none;
+    }
 }

@@ -33,7 +33,7 @@ const weeksTotal = Math.floor(daysTotal / 7);
 const progressValue = Math.floor(100 * daysSinceStart / daysTotal);
 
 // Updating html
-document.getElementById("percentagesection").style.filter = `hue-rotate(${progressValue * 1.8}deg)`
+document.getElementById("percentagesection").style.filter = `hue-rotate(${Math.min(progressValue, 100) * 1.8}deg)`
 
 document.getElementById("ddaysleft").innerHTML = daysUntilEnd;
 document.getElementById("dday").innerHTML = daysSinceStart;
@@ -43,9 +43,14 @@ document.getElementById("dweeksleft").innerHTML = weeksUntilEnd;
 document.getElementById("dweek").innerHTML = weeksSinceStart;
 document.getElementById("dtotalweeks").innerHTML = weeksTotal;
 
+if (progressValue >= 100) {
+    document.getElementById("daysection").style.display = "none";
+    document.getElementById("weeksection").style.display = "none";
+}
+
 let step=0, maxsteps = 70;
 let transi = setInterval(() => {
-    const progressTransi = step * progressValue / maxsteps;
+    const progressTransi = step * Math.min(progressValue, 100) / maxsteps;
     progressValueDiv.textContent = `${Math.floor(progressTransi)}%`;
     progressDiv.style.background = `conic-gradient(
       var(--active) ${ progressTransi * 3.6}deg,
