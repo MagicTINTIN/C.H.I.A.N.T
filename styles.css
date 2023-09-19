@@ -164,6 +164,15 @@ footer {
     color: var(--bgcolorstart);
 }
 
+#exception {
+    width: 100vw;
+    font-size: xx-small;
+    color: var(--bgcolorstart);
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 1080px) {
     header {
         width: 90vw;
@@ -185,6 +194,10 @@ footer {
 
     #datesection {
         font-size: small;
+    }
+
+    #exception {
+        font-size: 5px;
     }
 }
 

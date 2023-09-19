@@ -1,12 +1,13 @@
 const INFO = {
     startdate: "2023-08-28",
     enddate: "2024-01-31",
-    eventname: "En Lituanie"
+    eventname: "En Lituanie",
+    exception: "(*) Le nombre de jours peut être réduit dans le meilleur de cas ou allongé si la mère patrie la Russie décide de faire tout péter (ou autre connerie du genre) :p"
 }
 document.getElementById("dtitle").innerHTML = INFO.eventname.toUpperCase();
 document.getElementById("startdate").innerHTML = INFO.startdate;
 document.getElementById("enddate").innerHTML = INFO.enddate;
-
+document.getElementById("exception").innerHTML = INFO.exception;
 
 let progressDiv = document.getElementById("progress");
 let progressValueDiv = document.getElementById("progressvalue");
@@ -20,7 +21,7 @@ const currentToEnd = endDate - currentDate;
 const daysUntilEnd = Math.floor(currentToEnd / (1000 * 60 * 60 * 24));
 
 const startToCurrent = currentDate - startDate;
-const daysSinceStart = Math.floor(startToCurrent / (1000 * 60 * 60 * 24));
+const daysSinceStart = Math.floor(startToCurrent / (1000 * 60 * 60 * 24)) + 1;
 
 const startToEnd = endDate - startDate;
 const daysTotal = Math.floor(startToEnd / (1000 * 60 * 60 * 24));
@@ -35,7 +36,7 @@ const progressValue = Math.floor(100 * daysSinceStart / daysTotal);
 // Updating html
 document.getElementById("percentagesection").style.filter = `hue-rotate(${Math.min(progressValue, 100) * 1.8}deg)`
 
-document.getElementById("ddaysleft").innerHTML = daysUntilEnd;
+document.getElementById("ddaysleft").innerHTML = daysUntilEnd + "*";
 document.getElementById("dday").innerHTML = daysSinceStart;
 document.getElementById("dtotaldays").innerHTML = daysTotal;
 
@@ -46,6 +47,7 @@ document.getElementById("dtotalweeks").innerHTML = weeksTotal;
 if (progressValue >= 100) {
     document.getElementById("daysection").style.display = "none";
     document.getElementById("weeksection").style.display = "none";
+    document.getElementById("exception").style.display = "none";
 }
 
 let step=0, maxsteps = 70;
