@@ -1,5 +1,6 @@
 :root {
-    --bgcolor: #80CAE3;
+    --bgcolorstart: #80CAE3;
+    --bgcolorend: #0094C6;
     --color1: #ff0000;
     --color2: #00ff00;
 
@@ -8,6 +9,11 @@
     --white: #FFFFFF;
 
     --percentagewidth: calc(20vw + 20vh); 
+
+    --title: #483463;
+    --subtitle: #9067C6;
+
+    --hr: #E7C3D0;
 }
 
 *,
@@ -25,7 +31,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Lucida Console", "Courier New", monospace;
-    background-color: var(--bgcolor);
+    background: linear-gradient(var(--bgcolorstart) 0%, var(--bgcolorend) 100%);
 }
 
 body {
@@ -34,7 +40,20 @@ body {
     justify-content: space-between;
 }
 
+#void {
+    height: 3px;
+}
+
+/* ################# COMMON ################# */
+
+hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-top: 2px solid var(--hr);
+}
+
 .sections {
+    margin: auto;
     padding: 5px;
     background-color: var(--white);
     border-radius: 8px;
@@ -48,22 +67,25 @@ body {
     font-weight: lighter;
 }
 
+.title {
+    color: var(--title);
+}
+.subtitle {
+    color: var(--subtitle);
+}
+
+/* ################# HEADER ################# */
+
 header {
-    width: 40vw;
-    position: absolute;
-    transform: translate(-50%, -5%);
-    top: 5%;
-    left: 50%;
+    width: var(--percentagewidth);
     font-size: xx-large;
     text-align: center;
 }
 
+/* ################# DAYS ################# */
+
 #daysection {
-    width: 50vw;
-    position: absolute;
-    transform: translate(-50%, -20%);
-    top: 20%;
-    left: 50%;
+    width: 35vw;
     font-size: larger;
     text-align: center;
 }
@@ -72,23 +94,19 @@ header {
     font-size: xx-large;
 }
 
+/* ################# WEEKS ################# */
+
 #weeksection {
     width: 50vw;
-    position: absolute;
-    transform: translate(-50%, -33%);
-    top: 33%;
-    left: 50%;
     font-size: large;
     text-align: center;
 }
 
+/* ################# PERCENTAGE ################# */
+
 #percentagesection {
     height: var(--percentagewidth);
     width: var(--percentagewidth);
-    position: absolute;
-    transform: translate(-50%, 10%);
-    bottom: 10%;
-    left: 50%;
 
     display: grid;
     place-items: center;
@@ -101,6 +119,8 @@ header {
     border-radius: 50%;
     display: grid;
     place-items: center;
+
+    transition: all 0.5s;
 }
 
 #progress:before {
@@ -119,10 +139,9 @@ header {
     color: #231c3d;
 }
 
+/* ################# FOOTER ################# */
 
 footer {
-    position: fixed;
-    bottom: 2px;
     color: var(--white);
     width: 100%;
     text-align: center;
