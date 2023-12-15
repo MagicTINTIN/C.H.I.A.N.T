@@ -4,6 +4,13 @@ const INFO = {
     eventname: "En Lituanie",
     exception: "(*) Le nombre de jours peut être réduit dans le meilleur de cas ou allongé si la mère patrie la Russie décide de faire tout péter (ou autre connerie du genre) :p"
 }
+
+let urlArgs = window.location.href.slice(window.location.href.indexOf('?') + 1);
+if (urlArgs == "meh")
+    INFO.enddate = "2024-01-26";
+if (urlArgs == "new")
+    INFO.enddate = "2024-01-19";
+
 document.getElementById("dtitle").innerHTML = INFO.eventname.toUpperCase();
 document.getElementById("startdate").innerHTML = INFO.startdate;
 document.getElementById("enddate").innerHTML = INFO.enddate;
