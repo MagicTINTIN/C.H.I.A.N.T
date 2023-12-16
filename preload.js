@@ -1,6 +1,6 @@
 const INFO = {
     startdate: "2023-08-28",
-    enddate: "2024-01-31",
+    enddate: "2024-01-19",
     eventname: "En Lituanie",
     exception: "(*) Le nombre de jours peut être réduit dans le meilleur de cas ou allongé si la mère patrie la Russie décide de faire tout péter (ou autre connerie du genre) :p"
 }
@@ -10,6 +10,17 @@ if (urlArgs == "meh")
     INFO.enddate = "2024-01-26";
 if (urlArgs == "new")
     INFO.enddate = "2024-01-19";
+if (urlArgs == "old")
+    INFO.enddate = "2024-01-31";
+
+const regexStart = /s=\b\d{4}-\d{2}-\d{2}\b/;
+const regexEnd = /e=\b\d{4}-\d{2}-\d{2}\b/;
+const matchStart = urlArgs.match(regexStart);
+const matchEnd = urlArgs.match(regexEnd);
+if (matchStart)
+    INFO.startdate = matchStart[0].slice(2);
+if (matchEnd)
+    INFO.enddate = matchEnd[0].slice(2);
 
 const startDate = new Date(INFO.startdate);
 const endDate = new Date(INFO.enddate);
