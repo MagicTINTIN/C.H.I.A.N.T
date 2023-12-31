@@ -28,7 +28,7 @@ const currentDate = new Date();
 
 // Calculate days
 const currentToEnd = endDate - currentDate;
-const daysUntilEnd = Math.floor(currentToEnd / (1000 * 60 * 60 * 24));
+const daysUntilEnd = Math.floor(currentToEnd / (1000 * 60 * 60 * 24)) + 1;
 
 const startToCurrent = currentDate - startDate;
 const daysSinceStart = Math.floor(startToCurrent / (1000 * 60 * 60 * 24)) + 1;
