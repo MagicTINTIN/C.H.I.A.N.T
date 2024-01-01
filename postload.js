@@ -13,9 +13,21 @@ document.getElementById("ddaysleft").innerHTML = daysUntilEnd + "*";
 document.getElementById("dday").innerHTML = daysSinceStart;
 document.getElementById("dtotaldays").innerHTML = daysTotal;
 
-document.getElementById("dweeksleft").innerHTML = weeksUntilEnd;
-document.getElementById("dweek").innerHTML = weeksSinceStart;
-document.getElementById("dtotalweeks").innerHTML = weeksTotal;
+if (weeksUntilEnd > 0) {
+    document.getElementById("dweeksleft").innerHTML = weeksUntilEnd;
+    document.getElementById("dweek").innerHTML = weeksSinceStart;
+    document.getElementById("dtotalweeks").innerHTML = weeksTotal;
+}
+else {
+    document.getElementById("weeksection").innerHTML = `<h3 class="title">MOINS D'UNE SEMAINE RESTANTE !</h3>
+        <hr>
+        <h4  class="subtitle">${timeUntilEnd(endDate)}</h4>`;
+    setInterval(() => {
+        document.getElementById("weeksection").innerHTML = `<h3 class="title">MOINS D'UNE SEMAINE RESTANTE !</h3>
+            <hr>
+            <h4  class="subtitle">${timeUntilEnd(endDate)}</h4>`;
+    }, 1000);
+}
 
 if (progressValue >= 100) {
     document.getElementById("daysection").style.display = "none";
