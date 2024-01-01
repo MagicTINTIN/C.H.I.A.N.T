@@ -10,11 +10,19 @@ let progressValueDiv = document.getElementById("progressvalue");
 document.getElementById("percentagesection").style.filter = `hue-rotate(${Math.min(progressValue, 100) * 1.8}deg)`
 
 document.getElementById("ddaysleft").innerHTML = daysUntilEnd + "*";
+if (daysUntilEnd <= 1) {
+    document.getElementById("plurial1ddaysleft").innerHTML = "";
+    document.getElementById("plurial2ddaysleft").innerHTML = "";
+}
 document.getElementById("dday").innerHTML = daysSinceStart;
 document.getElementById("dtotaldays").innerHTML = daysTotal;
 
 if (weeksUntilEnd > 0) {
     document.getElementById("dweeksleft").innerHTML = weeksUntilEnd;
+    if (weeksUntilEnd == 1) {
+        document.getElementById("plurial1dweeksleft").innerHTML = "";
+        document.getElementById("plurial2dweeksleft").innerHTML = "";
+    }
     document.getElementById("dweek").innerHTML = weeksSinceStart;
     document.getElementById("dtotalweeks").innerHTML = weeksTotal;
 }
