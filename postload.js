@@ -17,7 +17,7 @@ if (daysUntilEnd <= 1) {
 document.getElementById("dday").innerHTML = daysSinceStart;
 document.getElementById("dtotaldays").innerHTML = daysTotal;
 
-if (weeksUntilEnd > 0) {
+if (weeksUntilEnd >= 1) {
     document.getElementById("dweeksleft").innerHTML = weeksUntilEnd;
     if (weeksUntilEnd == 1) {
         document.getElementById("plurial1dweeksleft").innerHTML = "";

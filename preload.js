@@ -42,7 +42,6 @@ const currentDate = new Date();
 // Calculate days
 const currentToEnd = endDate - currentDate;
 const daysUntilEnd = Math.floor(currentToEnd / (1000 * 60 * 60 * 24)) + 1;
-
 const startToCurrent = currentDate - startDate;
 const daysSinceStart = Math.floor(startToCurrent / (1000 * 60 * 60 * 24)) + 1;
 
@@ -50,7 +49,7 @@ const startToEnd = endDate - startDate;
 const daysTotal = Math.floor(startToEnd / (1000 * 60 * 60 * 24));
 
 // Calculate weeks
-const weeksUntilEnd = Math.floor(daysUntilEnd / 7);
+const weeksUntilEnd = Math.floor(10*daysUntilEnd / 7)/10;
 const weeksSinceStart = Math.floor(daysSinceStart / 7);
 const weeksTotal = Math.floor(daysTotal / 7);
 
@@ -76,5 +75,5 @@ function timeUntilEnd(d) {
     var secs = Math.round(diff % 6e4 / 1e3);
 
     // Return formatted string
-    return sign + z(hours) + ':' + z(mins) + ':' + z(secs);
+    return sign + z(hours) + 'h ' + z(mins) + 'm ' + z(secs) + 's restantes';
 }
