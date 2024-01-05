@@ -37,7 +37,7 @@ else {
     }, 1000);
 }
 
-if (progressValue >= 100) {
+if (progressValue >= 100 && currentToEnd < 0) {
     document.getElementById("daysection").style.display = "none";
     document.getElementById("weeksection").style.display = "none";
     document.getElementById("exception").style.display = "none";
